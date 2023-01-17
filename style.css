@@ -32,6 +32,9 @@
   margin: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 a {
   text-decoration: none;
   color: #000;
@@ -90,7 +93,6 @@ a:hover {
 }
 .burger-menu {
   display: none;
-
 }
 .butger-item {
   width: 40px;
@@ -309,6 +311,10 @@ a:hover {
 .p-about {
   margin: 1rem 0;
 }
+.serice {
+  z-index: 1;
+  position: relative;
+}
 
 .last-work {
   display: flex;
@@ -322,7 +328,6 @@ a:hover {
 }
 .last-work-fig {
   border: 2px solid #000;
-  
 }
 .last-work-fig,
 .last-work-text {
@@ -352,12 +357,9 @@ a:hover {
 }
 .hide {
   display: none;
-
 }
 
-
-@media screen and ( min-width:320px) and (max-width:767px){
-
+@media screen and (min-width: 320px) and (max-width: 767px) {
   h1 {
     font-size: 2rem !important;
   }
@@ -371,7 +373,7 @@ a:hover {
     left: 0;
     z-index: 100;
     background: #000;
-    opacity: .8;
+    opacity: 0.8;
     width: 100%;
     height: 200%;
   }
@@ -387,7 +389,7 @@ a:hover {
     align-items: center;
     padding: 5rem 1rem;
   }
-  .modal-menu-list a{
+  .modal-menu-list a {
     color: #fff;
   }
   .work-time__title {
@@ -406,49 +408,60 @@ a:hover {
   .modal-burger-menu {
     width: 50px;
     height: 50px;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
+
+    position: relative;
     top: 1.2rem;
     left: 3rem;
-    transform: rotate(-90deg);
-    transition-duration: 1s;
+  }
+
+  .modal-burger-item1 {
+    transform: translate(50%, 0);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    transform: rotate(45deg);
+  }
+  .modal-burger-item2 {
+    position: absolute;
+    transform: rotate(-45deg);
+    /* transform: translate(50%, 0); */
+    top: 20px;
+    left: 20px;
   }
   .hide {
     display: block;
     z-index: 0;
     opacity: 0;
-    transition-duration: .8s;
+    transition-duration: 0.8s;
   }
   .open {
-    transition-duration: .5s;
+    transition-duration: 0.5s;
   }
   .logo,
   .menu-list,
   .work-time,
-   .actions-fig{
+  .item-fig,
+  .actions-fig {
     display: none;
   }
   .first-display {
     flex-wrap: wrap;
     justify-content: center;
   }
-.first-display,
-  .serice ,
+  .first-display,
+  .serice,
   .actions,
   .about,
   .last-work,
-  .footer{
+  .footer,
+  .header {
     padding: 1rem;
   }
   .first-display__left,
   .first-right {
     align-items: center;
   }
-  .rules{
+  .rules {
     align-self: center;
   }
   .headers {
@@ -460,9 +473,14 @@ a:hover {
   .work-items {
     flex-wrap: wrap;
     gap: 1rem;
-    padding: .5rem;
+    padding: 0.5rem;
   }
-  .item-fig,
+  .service-items {
+    width: 100%;
+  }
+  .item {
+    width: 100%;
+  }
   .actions__callback-form,
   .work-items,
   .about,
@@ -471,8 +489,7 @@ a:hover {
   .last-work-fig,
   .last-work-text,
   .first-display__img,
-  .first-display__pic
-  {
+  .first-display__pic {
     width: 100%;
   }
   .fd-form {
@@ -490,20 +507,21 @@ a:hover {
   .item-price p {
     height: 40px;
   }
-  .input,.callback {
+  .input,
+  .callback {
     width: 80%;
   }
-  .last-work-fig{
-order: 1;
+  .last-work-fig {
+    order: 1;
   }
-  .last-work-text{
-order: 2;
+  .last-work-text {
+    order: 2;
   }
   .tab-group {
-    gap:0
+    gap: 0;
   }
   .tab {
-    padding: 1rem .5rem;
+    padding: 1rem 0.5rem;
     font-size: 1rem;
   }
   .item-text {
@@ -519,13 +537,12 @@ order: 2;
     flex-wrap: wrap;
     height: 750px;
   }
-  .about-text{
+  .about-text {
     position: relative;
     width: 100%;
     transform: translate(0, 100%);
   }
-  .action-form
-   {
+  .action-form {
     align-items: center;
   }
   .footer {
