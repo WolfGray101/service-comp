@@ -4,6 +4,7 @@ const burgerClose = document.querySelector('.modal-burger-menu')
 const header = document.querySelector('.header')
 const item = document.querySelectorAll('.item')
 const activeTab = document.querySelectorAll('.tab')
+const modalListItem  = document.querySelectorAll('.modal-menu-list')
 
 
   for (let el of activeTab) {
@@ -27,7 +28,12 @@ const activeTab = document.querySelectorAll('.tab')
     }
    }
   
-
+for (let el of modalListItem) {
+  el.addEventListener('click', () => {
+  modalW.classList.toggle('hide')
+  modalW.classList.toggle('open')
+  })
+}
 
 burgerOpen.addEventListener("click", () => {
   modalW.classList.toggle('hide')
